@@ -34,6 +34,21 @@ public class DemoApplication {
 		return "Insert contact page here";
 	}
 
+	@GetMapping("/about-us")
+	public String aboutUs() {
+		return "This is the about us page";
+	}
+	@GetMapping("/more-info")
+	public String moreInfo() {
+		return "This is the more info page";
+	}
+
+	@GetMapping("students/{id}/{first-name}/")
+	public Student studentPathVariable(@PathVariable int studentId,
+									   @PathVariable String firstName) {
+		return new Student(id, "Chris");
+	}
+
 	@GetMapping("/hello")
 	public Object getObject() {
 		Map<String, Object> object = new HashMap<>();
@@ -51,7 +66,7 @@ public class DemoApplication {
 						41)
 		);
 	}
-//	comment
+//	check if still connected
 
 
 
